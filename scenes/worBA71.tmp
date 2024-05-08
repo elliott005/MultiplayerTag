@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4bvpxvmxpawb"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_wk6v7"]
+[ext_resource type="PackedScene" uid="uid://ccmp3deex3fk5" path="res://scenes/actors/plane.tscn" id="2_6wqfb"]
+[ext_resource type="MeshLibrary" uid="uid://jbxlltnv1atu" path="res://resources/GridMapMeshLibrary.tres" id="3_mw5lq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2eltb"]
+
+[sub_resource type="Sky" id="Sky_tqrgd"]
+sky_material = SubResource("ProceduralSkyMaterial_2eltb")
+
+[sub_resource type="Environment" id="Environment_ub2ed"]
+background_mode = 2
+background_color = Color(0, 0, 0.611765, 1)
+sky = SubResource("Sky_tqrgd")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tc8nr"]
+noise_type = 5
+seed = 12
+frequency = 0.3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3e7hj"]
+noise = SubResource("FastNoiseLite_tc8nr")
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_wk6v7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ub2ed")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.737363, -0.164109, 0.655259, -0.334514, 0.754032, 0.565275, -0.586853, -0.636006, 0.501099, 0, 1.34625, 0)
+shadow_enabled = true
+
+[node name="Plane" parent="." instance=ExtResource("2_6wqfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, 0)
+
+[node name="FloorRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69.9, 0)
+enabled = false
+target_position = Vector3(0, -70, 0)
+
+[node name="FloorRayCastTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_mw5lq")
+cell_size = Vector3(1, 1, 1)
+collision_mask = 0
+metadata/_editor_floor_ = Vector3(0, 8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("NoiseTexture2D_3e7hj")
+
+[connection signal="timeout" from="FloorRayCastTimer" to="." method="_on_floor_ray_cast_timer_timeout"]

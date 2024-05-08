@@ -1,0 +1,182 @@
+[gd_scene load_steps=36 format=3 uid="uid://cxknuyjaxh06d"]
+
+[ext_resource type="Texture2D" uid="uid://buyaihjncvok8" path="res://assets/PixelArtTexture/PixelTexture (1).png" id="1_n2a1k"]
+[ext_resource type="Texture2D" uid="uid://cv74b7k6wgkm4" path="res://assets/PixelArtTexture/PixelTexture (184).png" id="2_quxhw"]
+[ext_resource type="Texture2D" uid="uid://t82hguavi11x" path="res://assets/PixelArtTexture/PixelTexture (79).png" id="3_00poh"]
+[ext_resource type="Texture2D" uid="uid://dcxkespaxoqvp" path="res://assets/PixelArtTexture/PixelTexture (140).png" id="3_xa1ct"]
+[ext_resource type="Texture2D" uid="uid://d4ojenvtqxil" path="res://assets/PixelArtTexture/PixelTexture (141).png" id="5_kbt4u"]
+[ext_resource type="Texture2D" uid="uid://cshc6phqtpd7h" path="res://assets/PixelArtTexture/PixelTexture (187).png" id="6_75as7"]
+[ext_resource type="Texture2D" uid="uid://duysd3keec1px" path="res://assets/PixelArtTexture/PixelTexture (215).png" id="7_cthdd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wt47s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s1vl"]
+albedo_texture = ExtResource("1_n2a1k")
+uv1_scale = Vector3(2, 2, 2)
+grow_amount = -0.662
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4cgvl"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_fudrt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3you6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quf7p"]
+albedo_texture = ExtResource("2_quxhw")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rn0mp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_fe3ja"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6l44w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5uya"]
+albedo_texture = ExtResource("3_xa1ct")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c0y7p"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_bwkk2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5kfaf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcnbr"]
+albedo_texture = ExtResource("3_00poh")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iw71f"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_qw4dk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_imjfn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dik0y"]
+albedo_texture = ExtResource("5_kbt4u")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y8qk2"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_ncwqo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_obesu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtt5e"]
+albedo_texture = ExtResource("6_75as7")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sfiom"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_fh7jn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ev8ko"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwmqu"]
+albedo_texture = ExtResource("7_cthdd")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e04ra"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_evebh"]
+
+[node name="GridMapMeshLibrary" type="Node3D"]
+
+[node name="Dirt" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wt47s")
+surface_material_override/0 = SubResource("StandardMaterial3D_7s1vl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dirt"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dirt/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4cgvl")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Dirt"]
+occluder = SubResource("BoxOccluder3D_fudrt")
+
+[node name="Grass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("BoxMesh_3you6")
+surface_material_override/0 = SubResource("StandardMaterial3D_quf7p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grass"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rn0mp")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Grass"]
+occluder = SubResource("BoxOccluder3D_fe3ja")
+
+[node name="DirtMountains" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = SubResource("BoxMesh_6l44w")
+skeleton = NodePath("../GrassMountains")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5uya")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DirtMountains"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DirtMountains/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c0y7p")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="DirtMountains"]
+occluder = SubResource("BoxOccluder3D_bwkk2")
+
+[node name="GrassMountains" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+mesh = SubResource("BoxMesh_5kfaf")
+surface_material_override/0 = SubResource("StandardMaterial3D_gcnbr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassMountains"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassMountains/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_iw71f")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="GrassMountains"]
+occluder = SubResource("BoxOccluder3D_qw4dk")
+
+[node name="DirtMountainTransitions" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.99865)
+mesh = SubResource("BoxMesh_imjfn")
+surface_material_override/0 = SubResource("StandardMaterial3D_dik0y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DirtMountainTransitions"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DirtMountainTransitions/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_y8qk2")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="DirtMountainTransitions"]
+occluder = SubResource("BoxOccluder3D_ncwqo")
+
+[node name="GrassMountainTransitions" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.0048)
+mesh = SubResource("BoxMesh_obesu")
+surface_material_override/0 = SubResource("StandardMaterial3D_jtt5e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassMountainTransitions"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassMountainTransitions/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sfiom")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="GrassMountainTransitions"]
+occluder = SubResource("BoxOccluder3D_fh7jn")
+
+[node name="Block" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+mesh = SubResource("BoxMesh_ev8ko")
+surface_material_override/0 = SubResource("StandardMaterial3D_qwmqu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_e04ra")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Block"]
+occluder = SubResource("BoxOccluder3D_evebh")

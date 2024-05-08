@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkt07e4gk636w"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_f34sd"]
+[ext_resource type="Texture2D" uid="uid://bngd1jdglbdwf" path="res://icon.svg" id="2_7yruf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i13d4"]
+radius = 0.45
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6xri3"]
+radius = 0.45
+height = 1.8
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bbxer"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("NameLabel:text")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6wtri"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_bwn5y"]
+length = 0.6
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_x4eqg"]
+length = 0.6
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_f34sd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_i13d4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6xri3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.25)
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="BlockRayCast" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -10)
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="JumpBoostTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="WallRunTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="BlockPlaceCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 9.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Point" type="Control" parent="CanvasLayer/CenterContainer"]
+modulate = Color(0, 1, 1, 0.231373)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/CenterContainer/Point"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_7yruf")
+
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RoleLabel" type="Label" parent="CanvasLayer/CenterContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ServerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_bbxer")
+
+[node name="NameLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visibility_range_begin = 1.0
+billboard = 1
+no_depth_test = true
+fixed_size = true
+render_priority = 1
+font_size = 16
+outline_size = 6
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+shape = SubResource("CapsuleShape3D_6wtri")
+
+[node name="WallRayCastLeft" type="RayCast3D" parent="."]
+target_position = Vector3(-0.9, 0, 0)
+
+[node name="WallRayCastRight" type="RayCast3D" parent="."]
+target_position = Vector3(0.9, 0, 0)
+
+[node name="WallSepLeft" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_bwn5y")
+
+[node name="WallSepRight" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_x4eqg")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

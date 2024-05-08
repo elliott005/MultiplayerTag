@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccmp3deex3fk5"]
+
+[ext_resource type="Script" path="res://scripts/plane.gd" id="1_duba6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3tgvq"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwsgg"]
+radius = 0.25
+height = 1.0
+
+[node name="Plane" type="CharacterBody3D"]
+script = ExtResource("1_duba6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_3tgvq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_fwsgg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpsp7s347wp4s"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_0xkh0"]
+[ext_resource type="MeshLibrary" uid="uid://jbxlltnv1atu" path="res://resources/GridMapMeshLibrary.tres" id="2_c3js2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2eltb"]
+
+[sub_resource type="Sky" id="Sky_tqrgd"]
+sky_material = SubResource("ProceduralSkyMaterial_2eltb")
+
+[sub_resource type="Environment" id="Environment_ub2ed"]
+background_mode = 2
+background_color = Color(0, 0, 0.611765, 1)
+sky = SubResource("Sky_tqrgd")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tc8nr"]
+noise_type = 5
+seed = 23
+frequency = 0.3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3e7hj"]
+noise = SubResource("FastNoiseLite_tc8nr")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vynt7"]
+properties/0/path = NodePath(".:rng_seed")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_0xkh0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ub2ed")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.737363, -0.164109, 0.655259, -0.334514, 0.754032, 0.565275, -0.586853, -0.636006, 0.501099, 0, 1.34625, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_c3js2")
+cell_size = Vector3(1, 1, 1)
+collision_mask = 0
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("NoiseTexture2D_3e7hj")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/actors/player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 4
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="Synchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vynt7")
+
+[connection signal="synchronized" from="Synchronizer" to="." method="_on_synchronizer_synchronized"]
